@@ -14,7 +14,7 @@
 
 ### logstash
 * 开源的服务器端数据处理管道，能够同时从多个来源采集数据、转换数据，然后将数据发送到存储库中。
-![logstash-diagram-6](D:\terry\notes\images\system\logstash-diagram-6.png)
+![logstash-diagram-6](.\images\system\logstash-diagram-6.png)
 
 ### kibana
 * 可视化Elasticsearch中的数据并操作Elastic stack。
@@ -48,7 +48,7 @@ Hadoop解决哪些问题？
 	* 硬件故障成为影响稳定的一大因素
 
 ### Hadoop相关技术
-![hadoop](D:\terry\notes\images\system\hadoop.png)
+![hadoop](.\images\system\hadoop.png)
 
 #### Hbase
 * Nosql数据库，key-value存储
@@ -150,12 +150,12 @@ Hadoop解决哪些问题？
 * **一致性（Consistency）**（所有节点在同一时间具有相同的数据）
 * **可用性（Availability）**（保证每个请求不管成功或者失败都有响应）
 * **分隔容忍（Partition tolerance）**（系统中任意信息的丢失或失败不会影响系统的继续运作）
-CAP理论的核心是：一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性这三个需求，最多只能同时较好的满足两个。
-因此，根据CAP原理将NoSQL数据库分成了满足CA原则、满足CP原则和满足AP原则三大类：
+  CAP理论的核心是：一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性这三个需求，最多只能同时较好的满足两个。
+  因此，根据CAP原理将NoSQL数据库分成了满足CA原则、满足CP原则和满足AP原则三大类：
 * CA-单点集群，满足一致性，可用性的系统，通常在可扩展性上不太强大。
 * CP-满足一致性，分区容忍性的系统，通常性能不是特别高。
 * AP-满足可用性，分区容忍性的系统，通常可能对一致性要求低一些。
-![cap-theoram-image](D:\terry\notes\images\system\cap-theoram-image.png)
+  ![cap-theoram-image](.\images\system\cap-theoram-image.png)
 
 ### NoSQL的优点/缺点
 * 优点：
@@ -222,7 +222,7 @@ BASE是NoSQL数据库通常对可用性及一致性的弱要求原则：
 	* MongoDB的复制至少需要两个节点。其中一个是主节点，负责处理客户端请求，其余的都是从节点，负责复制主节点上的数据。
 	* MongoDB各个节点常见的搭配方式为：一主一从、一主多从。
 	* 主节点记录在其上的所有操作oplog，从节点定期轮询主节点获取这些操作，然后对自己的数据副本执行这些操作，从而保证从节点的数据与主节点一致。
-![mongodb-replication](D:\terry\notes\images\system\mongodb-replication.png)
+![mongodb-replication](.\images\system\mongodb-replication.png)
 以上结构图中，客户端从主节点读取数据，在客户端写入数据到主节点时，主节点与从节点进行数据交互保障数据的一致性。
 
 副本集特征：
@@ -245,7 +245,7 @@ BASE是NoSQL数据库通常对可用性及一致性的弱要求原则：
 
 * MongoDB分片
 下图展示了在MongoDB中使用分片集群结构分布：
-![mongodb-sharding](D:\terry\notes\images\system\mongodb-sharding.png)
+![mongodb-sharding](.\images\system\mongodb-sharding.png)
 上图中主要有如下所述三个主要组件：
 	* Shard：
 用于存储实际的数据块，实际生产环境中一个shard server角色可由几台机器组成一个replica set承担，防止主机单点故障
